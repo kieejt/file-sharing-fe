@@ -131,25 +131,12 @@ const FileDetails = () => {
     setDownloading(false);
   };
 
-  // Hàm để xóa file
+  // Hàm để xóa file (giả lập)
   const deleteFile = async () => {
-    if (!file || String(file.userId) !== String(user?.id || '')) return;
-    
+    if (!file) return;
     if (window.confirm('Bạn có chắc chắn muốn xóa file này?')) {
-      try {
-        const token = localStorage.getItem('token');
-        await axios.delete(`/api/files/${fileId}`, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-        
-        toast.success('Đã xóa file thành công!');
-        navigate('/dashboard');
-      } catch (error) {
-        console.error('Delete error:', error);
-        toast.error(error.response?.data?.message || 'Có lỗi xảy ra khi xóa file');
-      }
+      toast.success('Đã xóa file (giả) thành công!');
+      navigate('/dashboard');
     }
   };
 
