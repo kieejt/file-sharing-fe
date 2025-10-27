@@ -15,10 +15,10 @@ const Home = () => {
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-8 text-center">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          Triển khai demo front-end không cần đăng nhập
+          Demo front-end của trang web Chia sẻ file
         </h2>
         <p className="text-gray-600 mb-6">
-          Bạn có thể truy cập trực tiếp trang Quản lý file để xem dữ liệu giả và thử các thao tác (tải xuống/đổi tên giả lập).
+          Bạn có thể truy cập trực tiếp trang Quản lý file để xem dữ liệu và thao tác (tải xuống/đổi tên).
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
@@ -31,7 +31,7 @@ const Home = () => {
             to="/profile"
             className="px-6 py-2 bg-white border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition-colors"
           >
-            Hồ sơ (giả)
+            Hồ sơ cá nhân
           </Link>
         </div>
       </div>
