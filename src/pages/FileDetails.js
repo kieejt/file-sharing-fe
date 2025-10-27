@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../context/AuthContext';
@@ -18,7 +18,8 @@ const FileDetails = () => {
 
   useEffect(() => {
     fetchFileDetails();
-  }, [fileId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fileId, user?.id]);
 
   const fetchFileDetails = () => {
     setLoading(true);
@@ -131,14 +132,6 @@ const FileDetails = () => {
     setDownloading(false);
   };
 
-  // Hàm để xóa file (giả lập)
-  const deleteFile = async () => {
-    if (!file) return;
-    if (window.confirm('Bạn có chắc chắn muốn xóa file này?')) {
-      toast.success('Đã xóa file (giả) thành công!');
-      navigate('/dashboard');
-    }
-  };
 
   // Hàm để bắt đầu đổi tên file
   const startRenameFile = () => {
